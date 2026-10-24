@@ -1,0 +1,84 @@
+[gd_scene format=3 uid="uid://cb6par5lh3kyg"]
+
+[ext_resource type="Texture2D" uid="uid://tkkvkp0dx0cx" path="res://Escena_Int_Torre/Biblioteca.jpg" id="1_8ku25"]
+[ext_resource type="Script" uid="uid://ddk64f2ueqm6t" path="res://Escena_Int_Torre.gd" id="1_t2nsr"]
+[ext_resource type="Script" uid="uid://d1fjnr10o6flm" path="res://objeto_clickeable.gd" id="2_8ku25"]
+[ext_resource type="Script" uid="uid://dtjt20mx0a6c1" path="res://puzzle.gd" id="3_07mh8"]
+[ext_resource type="PackedScene" uid="uid://cqdcj11kojwwe" path="res://caja_texto.tscn" id="5_j8jso"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_07mh8"]
+size = Vector2(208, 97)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lvie6"]
+size = Vector2(122.5, 225.5)
+
+[node name="Interior_Torre" type="Node2D" unique_id=977698011]
+script = ExtResource("1_t2nsr")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=858597094]
+position = Vector2(575.99994, 324.5)
+scale = Vector2(0.57600003, 0.32450002)
+texture = ExtResource("1_8ku25")
+metadata/_edit_lock_ = true
+
+[node name="Area_Puzzle_Libros" type="Area2D" parent="." unique_id=241636901]
+position = Vector2(748, 332)
+script = ExtResource("2_8ku25")
+id_objeto = "Libros"
+descripcion = "Unos libros viejos, parece que una frase esta incompleta"
+metadata/_edit_lock_ = true
+
+[node name="Collision_Libros" type="CollisionShape2D" parent="Area_Puzzle_Libros" unique_id=837325849]
+position = Vector2(-249, 0.5)
+shape = SubResource("RectangleShape2D_07mh8")
+
+[node name="Area_Salida" type="Area2D" parent="." unique_id=837067602]
+position = Vector2(374, 166)
+script = ExtResource("2_8ku25")
+id_objeto = "Torre"
+escena_destino = "uid://dxe4cxqb8vj4e"
+metadata/_edit_lock_ = true
+
+[node name="Salida2" type="CollisionShape2D" parent="Area_Salida" unique_id=1804897708]
+position = Vector2(-165, 247)
+shape = SubResource("RectangleShape2D_lvie6")
+
+[node name="Puzzle_Libro" type="CanvasLayer" parent="." unique_id=1282527958]
+script = ExtResource("3_07mh8")
+
+[node name="Panel_Puzzle" type="Panel" parent="Puzzle_Libro" unique_id=1757109802]
+custom_minimum_size = Vector2(500, 250)
+offset_left = 523.0
+offset_top = 77.0
+offset_right = 1023.0
+offset_bottom = 558.0
+
+[node name="MarginContainer" type="MarginContainer" parent="Puzzle_Libro/Panel_Puzzle" unique_id=1322938205]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Puzzle_Libro/Panel_Puzzle/MarginContainer" unique_id=787536868]
+layout_mode = 2
+
+[node name="Pregunta" type="Label" parent="Puzzle_Libro/Panel_Puzzle/MarginContainer/VBoxContainer" unique_id=17702803]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+autowrap_mode = 3
+
+[node name="Opciones" type="HBoxContainer" parent="Puzzle_Libro/Panel_Puzzle/MarginContainer/VBoxContainer" unique_id=1084234258]
+layout_mode = 2
+alignment = 1
+
+[node name="Resultado" type="Label" parent="Puzzle_Libro/Panel_Puzzle/MarginContainer/VBoxContainer" unique_id=877788846]
+layout_mode = 2
+
+[node name="Caja_Texto" parent="." unique_id=1924241928 instance=ExtResource("5_j8jso")]

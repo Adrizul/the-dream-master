@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://cqdcj11kojwwe"]
+
+[ext_resource type="Script" uid="uid://cj18frrdduqvk" path="res://caja_texto.gd" id="1_7tc2e"]
+
+[node name="Caja_Texto" type="CanvasLayer" unique_id=1924241928]
+script = ExtResource("1_7tc2e")
+
+[node name="Panel_Texto" type="Panel" parent="." unique_id=102295086]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -109.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 2
+metadata/_edit_lock_ = true
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel_Texto" unique_id=1555892912]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 20
+
+[node name="Texto" type="RichTextLabel" parent="Panel_Texto/MarginContainer" unique_id=820576979]
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 29
+bbcode_enabled = true
+meta_underlined = false

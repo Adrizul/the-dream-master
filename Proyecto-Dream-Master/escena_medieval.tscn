@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://dxe4cxqb8vj4e"]
+
+[ext_resource type="Script" uid="uid://1a74afsuxgny" path="res://Escena1.gd" id="1_5638q"]
+[ext_resource type="Texture2D" uid="uid://cqb5idov3nq1n" path="res://Escena Medieval.png" id="1_bgha2"]
+[ext_resource type="Script" uid="uid://d1fjnr10o6flm" path="res://objeto_clickeable.gd" id="2_5638q"]
+[ext_resource type="PackedScene" uid="uid://cqdcj11kojwwe" path="res://caja_texto.tscn" id="4_sif3q"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7q0ih"]
+size = Vector2(331, 163)
+
+[node name="Escena_Medieval" type="Node2D" unique_id=2024966885]
+script = ExtResource("1_5638q")
+
+[node name="Fondo _Escena" type="Sprite2D" parent="." unique_id=1664228004]
+scale = Vector2(0.6010417, 0.60185194)
+texture = ExtResource("1_bgha2")
+centered = false
+metadata/_edit_lock_ = true
+
+[node name="Area_CalderoMagico" type="Area2D" parent="." unique_id=1091083996]
+position = Vector2(374, 166)
+script = ExtResource("2_5638q")
+id_objeto = "Caldero"
+descripcion = "Un caldero negro sobre un altar. Una {gema} morada flota sobre él."
+metadata/_edit_lock_ = true
+
+[node name="Collision_CalderoMagico" type="CollisionShape2D" parent="Area_CalderoMagico" unique_id=1152667483]
+position = Vector2(269, 286)
+shape = SubResource("RectangleShape2D_7q0ih")
+
+[node name="Area_Torre" type="Area2D" parent="." unique_id=82471290]
+position = Vector2(374, 166)
+script = ExtResource("2_5638q")
+id_objeto = "Torre"
+descripcion = "Una torre de piedra con una ventana que brilla en {morado}. Algo vive allá arriba."
+escena_destino = "uid://cb6par5lh3kyg"
+metadata/_edit_lock_ = true
+
+[node name="Collision_Torre" type="CollisionPolygon2D" parent="Area_Torre" unique_id=1605947922]
+position = Vector2(-46.904335, 4.8999977)
+scale = Vector2(1.3152173, 1.1392045)
+polygon = PackedVector2Array(95.72894, -28.879791, 142.86945, -28.001984, 149.7124, 23.788544, 76.72067, 23.788544)
+
+[node name="Caja_Texto" parent="." unique_id=1924241928 instance=ExtResource("4_sif3q")]
