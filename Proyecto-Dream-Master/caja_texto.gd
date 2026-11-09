@@ -38,7 +38,8 @@ func _formatear(crudo: String) -> String:
 	return resultado
 
 func _on_palabra_clicada(meta):
-	Diario.agregar(str(meta))
+	# Corregido: se llama a agregar_palabra en lugar de agregar
+	Diario.agregar_palabra(str(meta))
 	texto.text = _formatear(_texto_actual)
 
 func _input(event):
