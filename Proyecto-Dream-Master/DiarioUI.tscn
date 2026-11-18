@@ -3,8 +3,12 @@
 [ext_resource type="Script" uid="uid://bq4ngexjc17ql" path="res://diario_ui.gd" id="1_fdw82"]
 [ext_resource type="Texture2D" uid="uid://be8waqwd7hy6i" path="res://Art/chico.png" id="2_5v53k"]
 [ext_resource type="Texture2D" uid="uid://dg4omcymbpru5" path="res://Art/Marco_Medieval.png" id="2_gavs3"]
+[ext_resource type="Texture2D" uid="uid://cs4nd04h0uq7t" path="res://Art/comic_parte1.jpeg" id="2_yic88"]
 [ext_resource type="Texture2D" uid="uid://cw3earyvqe0kr" path="res://Art/libro.png" id="3_gavs3"]
+[ext_resource type="Texture2D" uid="uid://clpk67vs7kmpm" path="res://Art/comic_parte2.jpeg" id="3_y12qt"]
+[ext_resource type="Texture2D" uid="uid://dc735kh1x2h68" path="res://Art/comic_parte3.jpeg" id="4_bltob"]
 [ext_resource type="Texture2D" uid="uid://wtsrce1swupp" path="res://Art/ajustes.png" id="4_yic88"]
+[ext_resource type="Texture2D" uid="uid://5ymi4davox1q" path="res://Art/comic_parte4.jpeg" id="5_0w7rv"]
 
 [node name="Diario_UI" type="CanvasLayer" unique_id=1372263368]
 layer = 10
@@ -85,6 +89,7 @@ size_flags_horizontal = 3
 [node name="Titulo" type="Label" parent="Panel_Diario/ColorRect/Paginas/MarginContainer/ContenedorH/Paquina_Isquierda" unique_id=1694604827]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0.3892193, 0.09857132, 1)
+theme_override_font_sizes/font_size = 25
 text = "Palabras Claves"
 horizontal_alignment = 1
 
@@ -104,6 +109,7 @@ size_flags_horizontal = 3
 [node name="Titulo" type="Label" parent="Panel_Diario/ColorRect/Paginas/MarginContainer/ContenedorH/Paquina_Derecha" unique_id=1921733841]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0.3892193, 0.09857132, 1)
+theme_override_font_sizes/font_size = 25
 text = "Comic"
 horizontal_alignment = 1
 
@@ -113,29 +119,33 @@ layout_mode = 2
 size_flags_vertical = 3
 columns = 2
 
-[node name="Viñeta1" type="ColorRect" parent="Panel_Diario/ColorRect/Paginas/MarginContainer/ContenedorH/Paquina_Derecha/GridComic" unique_id=465654673]
+[node name="Viñeta1" type="TextureRect" parent="Panel_Diario/ColorRect/Paginas/MarginContainer/ContenedorH/Paquina_Derecha/GridComic" unique_id=1632928721]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-color = Color(0.32172796, 0.32172796, 0.32172796, 1)
+texture = ExtResource("2_yic88")
+expand_mode = 1
 
-[node name="Viñeta_2" type="ColorRect" parent="Panel_Diario/ColorRect/Paginas/MarginContainer/ContenedorH/Paquina_Derecha/GridComic" unique_id=194826880]
+[node name="Viñeta_2" type="TextureRect" parent="Panel_Diario/ColorRect/Paginas/MarginContainer/ContenedorH/Paquina_Derecha/GridComic" unique_id=1684021435]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-color = Color(0.41490224, 0.38499057, 0.6330767, 1)
+texture = ExtResource("3_y12qt")
+expand_mode = 1
 
-[node name="Viñeta_3" type="ColorRect" parent="Panel_Diario/ColorRect/Paginas/MarginContainer/ContenedorH/Paquina_Derecha/GridComic" unique_id=1963376968]
+[node name="Viñeta_3" type="TextureRect" parent="Panel_Diario/ColorRect/Paginas/MarginContainer/ContenedorH/Paquina_Derecha/GridComic" unique_id=565639466]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-color = Color(0.8456379, 0, 0.42316043, 1)
+texture = ExtResource("4_bltob")
+expand_mode = 1
 
-[node name="Viñeta_4" type="ColorRect" parent="Panel_Diario/ColorRect/Paginas/MarginContainer/ContenedorH/Paquina_Derecha/GridComic" unique_id=1654659752]
+[node name="Viñeta_4" type="TextureRect" parent="Panel_Diario/ColorRect/Paginas/MarginContainer/ContenedorH/Paquina_Derecha/GridComic" unique_id=408981542]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-color = Color(0.30680132, 0.5977083, 0.40723667, 1)
+texture = ExtResource("5_0w7rv")
+expand_mode = 1
 
 [node name="Barra_Superior" type="ColorRect" parent="." unique_id=1768665093]
 clip_contents = true
