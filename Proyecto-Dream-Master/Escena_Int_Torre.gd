@@ -6,6 +6,7 @@ func _ready():
 	super()
 	puzzle.resuelto.connect(_on_puzzle_resuelto)
 
+# CLIC IZQUIERDO (Interactuar / Agarrar / Usar)
 func _on_interactuado(objeto):
 	match objeto.id_objeto:
 		# --- PUZZLES (MORADOS) ---
@@ -21,12 +22,36 @@ func _on_interactuado(objeto):
 			else:
 				puzzle.abrir("cofre")
 		
+		# --- PISTAS Y EXPLORACIÓN (No se pueden agarrar/usar) ---
+		"Cuadro":
+			caja_texto.mostrar("Está sujeto a la pared. No puedo llevármelo.")
+		"Reloj_Arena":
+			caja_texto.mostrar("¿Para qué quiero cargar un reloj de arena? Mejor solo lo observo.")
+		"Planta":
+			caja_texto.mostrar("¿Para qué quiero agarrar una maceta?")
+		"Vela":
+			caja_texto.mostrar("La cera no quema, pero no necesito llevármela.")
+		"Libros_Viejos", "Libros_Estantes":
+			caja_texto.mostrar("Pesan demasiado como para andar cargándolos.")
+		"Frasco_Pocion":
+			caja_texto.mostrar("No creo que sea buena idea beber o agarrar un líquido desconocido.")
+		_:
+			caja_texto.mostrar("¿Para qué quiero agarrar eso?")
+
+# CLIC DERECHO (Observar / Descripciones y Pistas)
+func _on_observado(objeto):
+	match objeto.id_objeto:
+		# --- PUZZLES ---
+		"Pergamino":
+			caja_texto.mostrar("Un pergamino antiguo sobre el escritorio, sellado con runas brillantes.")
+		"Cofre":
+			caja_texto.mostrar("Un baúl de madera reforzado con cerradura de hierro.")
+			
 		# --- PISTAS CON PALABRA CLAVE CLICABLE (AZULES) ---
 		"Cuadro":
 			caja_texto.mostrar("Un retrato oscuro del mago frente al portal. En el marco dice: 'Nadie escapa de la {maldicion} sin antes comprenderla.'")
-			
 		"Reloj_Arena":
-			caja_texto.mostrar("La arena púrpura cae en cámara lenta dentro del cristal. En la base de bronce está tallada la palabra: '{tiempo}'.")
+			caja_texto.mostrar("La arena cae en cámara lenta dentro del cristal. En la base de bronce está tallada la palabra: '{tiempo}'.")
 			
 		# --- EXPLORACIÓN AMBIENTAL (ROJOS) ---
 		"Planta":
@@ -38,7 +63,10 @@ func _on_interactuado(objeto):
 		"Libros_Estantes":
 			caja_texto.mostrar("Grimorios antiguos ordenados por el color de sus runas.")
 		"Frasco_Pocion":
-			caja_texto.mostrar("Un frasco con un líquido violeta que brilla tenuemente en la sombra.")
+			caja_texto.mostrar("Un frasco con un líquido extraño que brilla, mejor me quedare con sed.")
+		_:
+			# Si otro objeto tiene texto escrito en el Inspector, usa el de EscenaBase
+			super._on_observado(objeto)
 
 func _on_puzzle_resuelto(id_puzzle: String):
 	if id_puzzle == "pergamino":

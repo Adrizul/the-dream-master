@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://ddk64f2ueqm6t" path="res://Escena_Int_Torre.gd" id="1_t2nsr"]
 [ext_resource type="Script" uid="uid://d1fjnr10o6flm" path="res://objeto_clickeable.gd" id="2_8ku25"]
-[ext_resource type="Texture2D" uid="uid://ccrdck72xsp7b" path="res://Art/interior_torrepng.png" id="2_t2nsr"]
+[ext_resource type="Texture2D" uid="uid://djbmx0qpb8uoj" path="res://Escena_Int_Torre/Biblioteca.png" id="2_t2nsr"]
 [ext_resource type="Script" uid="uid://dtjt20mx0a6c1" path="res://puzzle.gd" id="3_07mh8"]
 [ext_resource type="PackedScene" uid="uid://cqdcj11kojwwe" path="res://caja_texto.tscn" id="5_j8jso"]
 
@@ -13,10 +13,10 @@ size = Vector2(181, 207.25)
 size = Vector2(53, 40)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_stay2"]
-size = Vector2(45, 63)
+size = Vector2(49.5, 63)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v44xu"]
-size = Vector2(179, 111)
+size = Vector2(179, 117.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8h0tx"]
 size = Vector2(86, 218)
@@ -31,7 +31,7 @@ size = Vector2(81, 41)
 size = Vector2(74, 58.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2dxjo"]
-size = Vector2(50, 48)
+size = Vector2(50, 77)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lvie6"]
 size = Vector2(87.25, 322)
@@ -77,7 +77,7 @@ id_objeto = "Reloj_Arena"
 metadata/_edit_lock_ = true
 
 [node name="Collision_Reloj_Arena" type="CollisionShape2D" parent="Objetos_Pista/Area_Reloj_Arena" unique_id=1332123151]
-position = Vector2(400, 178)
+position = Vector2(411.25, 180)
 shape = SubResource("RectangleShape2D_stay2")
 
 [node name="Area_Cuadro_Pared" type="Area2D" parent="Objetos_Pista" unique_id=1904602657]
@@ -86,7 +86,7 @@ id_objeto = "Cuadro"
 metadata/_edit_lock_ = true
 
 [node name="Collision_Cuadro_Pared" type="CollisionShape2D" parent="Objetos_Pista/Area_Cuadro_Pared" unique_id=347346246]
-position = Vector2(742.5, 179)
+position = Vector2(739, 180.25)
 shape = SubResource("RectangleShape2D_v44xu")
 
 [node name="Objetos_Exploracion" type="Node2D" parent="." unique_id=597280823]
@@ -134,7 +134,7 @@ id_objeto = "Frasco_Pocion"
 metadata/_edit_lock_ = true
 
 [node name="Collision_Frasco_pocion" type="CollisionShape2D" parent="Objetos_Exploracion/Area_Frasco_pocion" unique_id=1121691190]
-position = Vector2(483, 285)
+position = Vector2(485, 280)
 shape = SubResource("RectangleShape2D_2dxjo")
 
 [node name="Area_Salida" type="Area2D" parent="." unique_id=837067602]

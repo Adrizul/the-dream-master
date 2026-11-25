@@ -3,7 +3,7 @@ extends CanvasLayer
 const COLOR_CLAVE = "#ffd54a"
 const COLOR_GUARDADA = "#A9A9A9"
 const PLANTILLA_PALABRA = "[url=%s][color=%s]%s[/color][/url]"
-const SEGUNDOS_POR_LETRA = 0.03
+const SEGUNDOS_POR_LETRA = 0.07
 
 var _regex := RegEx.create_from_string("\\{(.+?)\\}")
 var _texto_actual := ""

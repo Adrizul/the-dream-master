@@ -4,9 +4,13 @@
 [ext_resource type="Texture2D" uid="uid://cqb5idov3nq1n" path="res://Escena Medieval.png" id="1_bgha2"]
 [ext_resource type="Script" uid="uid://d1fjnr10o6flm" path="res://objeto_clickeable.gd" id="2_5638q"]
 [ext_resource type="PackedScene" uid="uid://cqdcj11kojwwe" path="res://caja_texto.tscn" id="4_sif3q"]
+[ext_resource type="Script" uid="uid://cbvo0agdmq7e4" path="res://collision_boton_temporal.gd" id="5_wc868"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7q0ih"]
 size = Vector2(331, 163)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6upf0"]
+size = Vector2(59, 152.5)
 
 [node name="Escena_Medieval" type="Node2D" unique_id=2024966885]
 script = ExtResource("1_5638q")
@@ -42,3 +46,11 @@ scale = Vector2(1.3152173, 1.1392045)
 polygon = PackedVector2Array(95.72894, -28.879791, 142.86945, -28.001984, 149.7124, 23.788544, 76.72067, 23.788544)
 
 [node name="Caja_Texto" parent="." unique_id=1924241928 instance=ExtResource("4_sif3q")]
+
+[node name="Boton_temporal" type="Area2D" parent="." unique_id=2094156006]
+script = ExtResource("5_wc868")
+metadata/_edit_lock_ = true
+
+[node name="Collision_Boton_temporal" type="CollisionShape2D" parent="Boton_temporal" unique_id=263232372]
+position = Vector2(228, 463)
+shape = SubResource("RectangleShape2D_6upf0")
